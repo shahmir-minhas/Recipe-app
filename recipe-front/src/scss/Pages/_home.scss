@@ -1,0 +1,60 @@
+.home {
+  &__hero-container {
+    height: 500px;
+    width: 100%;
+    background-color: gray;
+    background-image: url("../../Assets/28-Cheese.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    h1 {
+      font-size: 4.125rem;
+      color: #333;
+    }
+  }
+  &__search-input {
+    width: 500px;
+    height: 50px;
+    box-shadow: none;
+    border-radius: 4px;
+  }
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    border: none;
+  }
+  &__content-wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 100px;
+  }
+  &__content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .recipe-card {
+    height: 460px;
+    width: 270px;
+    margin: 10px 30px;
+    border-radius: 4px;
+    .img-holder {
+      background-color: grey;
+      height: 268px;
+      width: 100%;
+    }
+    .content {
+      padding: 10px;
+      h4 {
+        margin: 0;
+        font-size: 22px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .ratings {
+        color: #f7af31;
+      }
+    }
+  }
+}

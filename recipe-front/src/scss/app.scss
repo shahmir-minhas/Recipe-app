@@ -1,0 +1,12 @@
+//Bootstrap
+@import 'antd/dist/antd';
+//Defaults
+@import './defaults';
+
+
+//Layout
+@import './layout';
+// pages 
+@import './Pages/home';
+@import './Pages/auth';
+@import './Pages/dashboard';
