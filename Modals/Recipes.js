@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 const recipeSchema = {
-  image: [],
+  image: String,
   title: String,
   content: String,
   author: String,
   userId: String,
-  
+
   ingredients: String,
   steps: String,
   totalCost: Number,

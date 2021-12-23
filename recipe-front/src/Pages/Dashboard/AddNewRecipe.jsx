@@ -10,11 +10,21 @@ const AddNewRecipe = () => {
   const [addNewRecipe] = Form.useForm();
   // Form handling
   const onFinish = (e) => {
-    // console.log('e ',e.image.file.originFileObj);
-    const formData = addNewRecipe.getFieldsValue();
-    // console.log(formData);
-    // formData.append(e.image.file.originFileObj);
-    console.log("form Data", formData);
+    console.log(e);
+    // console.log("e ", e.image.file.originFileObj);
+    // const formData = addNewRecipe.getFieldsValue();
+    var formData = new FormData();
+    formData.append("title", e.title);
+    formData.append("content", e.content);
+    formData.append("ingredients", e.ingredients);
+    formData.append("totalCost", e.totalCost);
+    formData.append("totalTimeReq", e.totalTimeReq);
+    formData.append("userId", e.userId);
+    formData.append("image", e.image.file.name);
+    formData.append("file", e.image.file.originFileObj);
+    console.log("file", formData.get("file"));
+    console.log("image", formData.get("image"));
+
     axios
       .post("/create-recipe", formData)
       .then((res) => {
@@ -33,16 +43,6 @@ const AddNewRecipe = () => {
   };
   //handling
   const handleUpload = (e) => {
-    var data = new FormData();
-    const image = addNewRecipe.getFieldValue('image');
-    // console.log(e.image[0].originFileObj);
-    // formData.append("image", values.image[0].originFileObj);
-    // formData.append("title", values.title);
-    // formData.append("body", textbody);
-    console.log(image.file.originFileObj);
-    data.append('image', image.file.originFileObj);
-    
-
     console.log("filed value", e);
 
     // axios.post("/image-upload", e.file).then((res) => {
@@ -143,17 +143,12 @@ const AddNewRecipe = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item
-            label="Image Upload"
-            name="image"
-            rules={[
-              {
-                required: true,
-                message: "Please upload image!",
-              },
-            ]}
-          >
-            <Upload customRequest={handleUpload} name="image">
+          <Form.Item label="Image" name="image">
+            <Upload
+              customRequest={handleUpload}
+              name="image"
+              showUploadList={false}
+            >
               <Button icon={<UploadOutlined />}>Click to Upload</Button>
             </Upload>
           </Form.Item>

@@ -24,8 +24,7 @@ const storage = multer.diskStorage({
     console.log(__dirname);
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + "-" + uniqueSuffix + ".png");
+    cb(null, file.originalname);
   },
 });
 
@@ -114,9 +113,17 @@ app.route("/recipe/:id").get((req, res) => {
     err ? res.send(err) : res.json(recipe);
   });
 });
-app.post("/create-recipe", (req, res) => {
+app.post("/create-recipe", upload.single("file"), (req, res) => {
   console.log("req-body", req.body);
-  const newRecipe = new Recipe(req.body);
+  const newRecipe = new Recipe({
+    title: req.body.title,
+    content: req.body.content,
+    ingredients: req.body.ingredients,
+    totalCost: req.body.totalCost,
+    totalTimeReq: req.body.totalTimeReq,
+    userId: req.body.userId,
+    image: req.body.image,
+  });
   console.log("new rec", newRecipe);
   newRecipe.save((err) => {
     err
@@ -125,7 +132,7 @@ app.post("/create-recipe", (req, res) => {
   });
 });
 
-app.post("/image-upload",upload.single('file'), (req, res) => {
+app.post("/image-upload", upload.single("file"), (req, res) => {
   console.log("req body", req.file);
 
   res.json({ message: "calling firm img upload" });
