@@ -67,7 +67,7 @@ const RecipeListTable = (props) => {
   ];
   return (
     <React.Fragment>
-      <Table dataSource={recipes} columns={columns} />;
+      <Table dataSource={recipes} columns={columns} />
     </React.Fragment>
   );
 };

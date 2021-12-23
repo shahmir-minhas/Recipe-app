@@ -1,0 +1,12 @@
+.recipe-details-wrapper {
+  padding: 100px;
+  .image-holder {
+    height: 300px;
+    width: 100%;
+    background-color: grey;
+    background-image: url("../../Assets/28-Cheese.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+  }
+}

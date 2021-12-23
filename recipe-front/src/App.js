@@ -39,4 +39,13 @@ function App() {
           <Route path="/recipe/:id" element={<RecipeIndex />} />
           <Route path="/" element={<Index />} />
         </Routes>
-      </m
+      </main>
+    </div>
+  );
+}
+
+export default App;
+
+// {
+//   "client": "cd recipe-front && npm run-script build"
+// }

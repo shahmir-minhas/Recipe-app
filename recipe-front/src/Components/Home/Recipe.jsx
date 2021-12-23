@@ -27,4 +27,14 @@ const Recipe = ({ recipe }) => {
           <p>{recipe.content}</p>
           <div className="d-flex justify-content-between align-items-center">
             <p className="m-0">
-              by <span className="fw-bold">{recipe.au
+              by <span className="fw-bold">{recipe.author}</span>
+            </p>
+            <Link to={`/recipe/${recipe._id}`}> View Details</Link>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default Recipe;

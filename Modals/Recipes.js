@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const recipeSchema = {
-  image: String,
+  image: [],
   title: String,
   content: String,
   author: String,
