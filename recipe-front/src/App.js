@@ -9,7 +9,6 @@ import PrivateRoute from "./Routes/PrivateRoute";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "antd/dist/antd.css";
 import "./App.css";
 import "./scss/app.scss";
 

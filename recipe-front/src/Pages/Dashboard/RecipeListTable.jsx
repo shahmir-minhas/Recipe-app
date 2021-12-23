@@ -16,6 +16,7 @@ const RecipeListTable = (props) => {
     axios.get(`/recipes/${u_id}`).then((res) => {
       setRecipes(res.data);
     });
+    console.log("useEffect");
   }, []);
 
   const handleDelete = (_id) => {
@@ -23,10 +24,20 @@ const RecipeListTable = (props) => {
 
     axios.delete(`/delete-recipe/${_id}`).then((res) => {
       res.data.type
-        ? message.info(res.data.message)
+        ? axios
+            .get(`/recipes/${u_id}`)
+            .then((res) => {
+              setRecipes(res.data);
+            })
+            .then((res) => {
+              message.info(res);
+            })
         : message.error("Error in deleting record");
     });
-    window.location.reload();
+    // window.location.reload();
+    // axios.get(`/recipes/${u_id}`).then((res) => {
+    //   setRecipes(res.data);
+    // });
   };
 
   const columns = [
@@ -59,7 +70,6 @@ const RecipeListTable = (props) => {
           >
             <DeleteOutlined className="me-2" />
           </Popconfirm>
-          <EditOutlined />
         </div>
       ),
       key: "action",

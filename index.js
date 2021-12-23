@@ -29,6 +29,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+app.use('/media', express.static(path.join(__dirname, '/media')));
 
 // Have Node serve the files for our built React app
 // app.use(express.static(path.resolve(__dirname, "./recipe-front/build")));
@@ -114,8 +115,8 @@ app.route("/recipe/:id").get((req, res) => {
   });
 });
 app.post("/create-recipe", upload.single("file"), (req, res) => {
-  console.log("req-body", req.body);
   const newRecipe = new Recipe({
+    author: req.body.author,
     title: req.body.title,
     content: req.body.content,
     ingredients: req.body.ingredients,

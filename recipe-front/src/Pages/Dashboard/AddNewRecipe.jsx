@@ -14,6 +14,7 @@ const AddNewRecipe = () => {
     // console.log("e ", e.image.file.originFileObj);
     // const formData = addNewRecipe.getFieldsValue();
     var formData = new FormData();
+    formData.append("author", e.author);
     formData.append("title", e.title);
     formData.append("content", e.content);
     formData.append("ingredients", e.ingredients);
@@ -22,9 +23,6 @@ const AddNewRecipe = () => {
     formData.append("userId", e.userId);
     formData.append("image", e.image.file.name);
     formData.append("file", e.image.file.originFileObj);
-    console.log("file", formData.get("file"));
-    console.log("image", formData.get("image"));
-
     axios
       .post("/create-recipe", formData)
       .then((res) => {
@@ -143,18 +141,18 @@ const AddNewRecipe = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item label="Image" name="image">
+          <Form.Item name="image">
             <Upload
               customRequest={handleUpload}
               name="image"
               showUploadList={false}
             >
-              <Button icon={<UploadOutlined />}>Click to Upload</Button>
+              <Button icon={<UploadOutlined />} className="btn-upload">Click to Upload</Button>
             </Upload>
           </Form.Item>
 
           <div className="text-start">
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" className="btn-submit">
               Submit
             </Button>
           </div>

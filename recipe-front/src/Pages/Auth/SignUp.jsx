@@ -35,7 +35,8 @@ const SignUp = () => {
 
   return (
     <React.StrictMode>
-      <Modal visible={isModalVisible} onCancel={handleCancel} footer={null}>
+      <Modal visible={isModalVisible} onCancel={handleCancel} footer={null} className="sign-up-modal">
+      <h4 className="mb-4">Sign up</h4>
         <Form
           name="signUp"
           form={form}
@@ -44,7 +45,7 @@ const SignUp = () => {
           autoComplete="off"
           layout="vertical"
         >
-          <div className="row">
+          <div className="row mb-3">
             <div className="col-6">
               <Form.Item
                 label="First Name"
@@ -123,8 +124,8 @@ const SignUp = () => {
             </div>
           </div>
           <div className="text-end">
-            <Button onClick={handleCancel} className="me-2">Cancel</Button>
-            <Button onClick={onFinish}>Sign Up</Button>
+            <Button onClick={handleCancel} className="btn-cancel">Cancel</Button>
+            <Button onClick={onFinish} className="btn-sign-up">Sign Up</Button>
           </div>
         </Form>
       </Modal>

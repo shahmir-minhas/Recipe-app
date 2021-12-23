@@ -2,23 +2,109 @@
   background-color: #f7af31;
   button {
     height: 45px;
-    width: 100px;
+    width: 150px;
     font-size: 20px;
     font-weight: 500;
     background: #fff;
     color: #f7af31;
     border-radius: 4px;
-    border: none;
+    border: 2px solid #f7af31;
+    &:active,
+    &:focus,
+    &:hover {
+      background: #f7af31;
+      color: #ffffff;
+      border-radius: 4px;
+      border: 2px solid #ffffff;
+    }
+  }
+}
+
+.login-modal {
+  label {
+    font-size: 14px;
   }
   .btn-login {
-    height: 45px;
-    width: 100px;
-    font-size: 20px;
+    height: 35px;
+    width: 90px;
+    font-size: 16px;
     font-weight: 500;
     background: #f7af31;
     color: #ffffff;
     border-radius: 4px;
-    border: none;
+    border: 2px solid #f7af31;
+    margin-left: 20px;
+    &:active,
+    &:focus,
+    &:hover {
+      background: #f7af31;
+      color: #ffffff;
+      border-radius: 4px;
+      border: 2px solid #ffffff;
+    }
   }
 
+  .btn-cancel {
+    height: 35px;
+    width: 90px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #ffffff;
+    color: #f7af31;
+    border-radius: 4px;
+    border: 2px solid #f7af31;
+    margin-left: 20px;
+    &:active,
+    &:focus,
+    &:hover {
+      background: #f7af31;
+      color: #ffffff;
+      border-radius: 4px;
+      border: 2px solid #ffffff;
+    }
+  }
+}
+.sign-up-modal {
+  label {
+    font-size: 14px;
+  }
+  .btn-sign-up {
+    height: 35px;
+    width: 90px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #f7af31;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 2px solid #f7af31;
+    margin-left: 20px;
+    &:active,
+    &:focus,
+    &:hover {
+      background: #f7af31;
+      color: #ffffff;
+      border-radius: 4px;
+      border: 2px solid #ffffff;
+    }
+  }
+
+  .btn-cancel {
+    height: 35px;
+    width: 90px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #ffffff;
+    color: #f7af31;
+    border-radius: 4px;
+    border: 2px solid #f7af31;
+    margin-left: 20px;
+    &:active,
+    &:focus,
+    &:hover {
+      background: #f7af31;
+      color: #ffffff;
+      border-radius: 4px;
+      border:none;
+    }
+  }
 }

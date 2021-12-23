@@ -44,7 +44,14 @@ const LogIn = () => {
 
   return (
     <React.StrictMode>
-      <Modal visible={isModalVisible} onCancel={handleCancel} footer={null}>
+      <Modal
+        visible={isModalVisible}
+        onCancel={handleCancel}
+        footer={null}
+        className="login-modal"
+      >
+        <h4 className="mb-4">Login</h4>
+
         <Form
           name="login"
           form={form}
@@ -53,7 +60,7 @@ const LogIn = () => {
           autoComplete="off"
           layout="vertical"
         >
-          <div className="row">
+          <div className="row mb-3">
             <div className="col-6">
               <Form.Item
                 label="Email"
@@ -79,13 +86,13 @@ const LogIn = () => {
                   },
                 ]}
               >
-                <Input />
+                <Input.Password />
               </Form.Item>
             </div>
           </div>
           <div className="text-end">
-            <Button onClick={handleCancel} className="me-1 btn-cancel">
-              cancel
+            <Button onClick={handleCancel} className="btn-cancel">
+              Cancel
             </Button>
             <Button onClick={onFinish} className="btn-login">
               Login

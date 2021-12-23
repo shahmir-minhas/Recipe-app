@@ -43,6 +43,10 @@
       background-color: grey;
       height: 268px;
       width: 100%;
+      .img-recipe {
+        height: 268px;
+        width: 100%;
+      }
     }
     .content {
       padding: 10px;
@@ -54,6 +58,9 @@
       }
       .ratings {
         color: #f7af31;
+      }
+      .discription{
+        box-sizing: border-box;
       }
     }
   }

@@ -17,19 +17,29 @@ const Recipe = ({ recipe }) => {
   return (
     <React.Fragment>
       <div className="recipe-card shadow">
-        <div className="img-holder">{recipe.image}</div>
+        <div className="img-holder">
+          <img src={"/media/" + recipe.image} alt="" className="img-recipe" />
+        </div>
         <div className="content">
           <h4>{recipe.title}</h4>
 
           <div className="text-start">
             <Rate value={rating} onChange={handleRating} className="ratings" />
           </div>
-          <p>{recipe.content}</p>
+          <div className="discription">
+            <p>
+              {recipe.content.length > 70
+                ? recipe.content.slice(1, 70)
+                : recipe.content}
+              ...
+              <Link to={`/recipe/${recipe._id}`}> View Details</Link>
+            </p>
+          </div>
+
           <div className="d-flex justify-content-between align-items-center">
             <p className="m-0">
               by <span className="fw-bold">{recipe.author}</span>
             </p>
-            <Link to={`/recipe/${recipe._id}`}> View Details</Link>
           </div>
         </div>
       </div>

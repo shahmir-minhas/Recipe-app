@@ -44,7 +44,7 @@ const Layout = (props) => {
         </ul>
         <div>
           <h4 className={`text-light  ${isLogin() ? "d-block" : "d-none"}`}>
-            Welcome <span className="fs-3 text-dark">{getUser()} </span>
+            Welcome <span className="fs-3">{getUser()}!</span>
           </h4>
         </div>
       </nav>

@@ -1,5 +1,10 @@
 .recipe-details-wrapper {
-  padding: 100px;
+  margin: 100px;
+  border-radius: 4px;
+  .color-gold{
+    color: #f7af31;
+  }
+
   .image-holder {
     height: 300px;
     width: 100%;
@@ -8,5 +13,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 50px;
+  }
+  .content {
+    padding: 100px;
+    .btn-back {
+      background-color: #f7af31;
+      border: none;
+      border-radius: 4px;
+      color: #ffffff;
+    }
   }
 }
